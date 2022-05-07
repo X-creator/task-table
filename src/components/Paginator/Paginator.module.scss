@@ -1,0 +1,30 @@
+@import '../../vars.scss';
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 62px;
+    padding: 16px 42px 12px;
+}
+
+.wrapper {
+    display: flex;
+    gap: 15px;
+}
+
+.actions {
+    font-weight: 500;
+    font-size: 24px;
+}
+
+.links {
+    font-style: italic;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.active {
+    composes: links;
+    color: $active-color;
+}

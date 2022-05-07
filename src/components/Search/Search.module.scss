@@ -1,0 +1,50 @@
+@import '../../vars.scss';
+
+.search {
+    position: relative;
+    width: 630px;
+
+    &::after {
+        position: absolute;
+        width: 21px;
+        height: 21px;
+        top: 16px;
+        right: 16px;
+        content: url("../../assets/search-icon.svg");
+    }
+}
+
+.input {
+    height: 52px;
+    width: 100%;
+    padding: 18px 15px 15px 26px;
+    background: $secondary-color;
+    color: $base-color;
+    font-size: 16px;
+    letter-spacing: 1px;
+
+    &::placeholder {
+        color: #B2B7BF;
+        font-size: 14px;
+    }
+
+    &:focus {
+        outline: none;
+        border: $border;
+    }
+}
+
+.result {
+    padding: 0 20px;
+    font-size: 21px;
+    font-weight: 700;
+    color: $active-color;
+    display: flex;
+    height: 52px;
+    align-items: center;
+    margin: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translateX(100%);
+}

@@ -1,0 +1,101 @@
+@import '../../vars.scss';
+
+.table {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.heading {
+    height: 54px;
+    background: $primary-color;
+    box-shadow: $box-shadow;
+    border: 1px solid $primary-color;
+
+    th:nth-child(1) {
+        width: 110px;
+    }
+}
+
+.sortDown {
+    position: relative;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    color: $base-color;
+    font-weight: 600;
+    font-size: 14px;
+    transition: 0.1s;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: -7px;
+        right: -23px;
+        transition: 0.1s;
+        transform: translateY(100%);
+        width: 15px;
+        height: 12px;
+        background: url("../../assets/sort-icon.svg") no-repeat center;
+    }
+}
+
+.sortUp {
+    composes: sortDown;
+
+    &::after {
+        transform: rotate(180deg) translateY(-100%);
+    }
+}
+
+.body {
+    border: $border;
+
+    td {
+        color: $primary-color;
+        font-weight: 500;
+        font-size: 13px;
+        height: 82px;
+        padding: 8px;
+        border: 1px solid #ddd;
+    }
+
+    td:nth-child(1) {
+        text-align: center;
+    }
+}
+
+.highlight {
+    background: $secondary-color;
+    color: $active-color;
+    border-radius: 10%;
+    padding: 1px 2px;
+}
+
+.spinner {
+    position: absolute;
+    top: 0;
+    right: -26px;
+    width: 20px;
+    height: 20px;
+
+    &:after {
+        content: " ";
+        display: block;
+        width: inherit;
+        height: inherit;
+        border-radius: 50%;
+        border: 2px solid;
+        border-color: $base-color transparent $base-color transparent;
+        animation: spinner 1.2s linear infinite;
+    }
+}
+
+@keyframes spinner {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
